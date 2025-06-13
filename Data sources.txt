@@ -1,0 +1,102 @@
+************************************************************
+********************** Data Sources ************************
+
+******* CAPACITY:
+* Canada    - Link : https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2510002201
+*               - Year : 2021
+*               - For Gas : CT = Combustion turbine | CCGT = Conventional Steam Turbine
+*           - Storage : https://renewablesassociation.ca/fr/en-chiffres/#:~:text=Canada%20has%20only%20begun%20to,renewable%20energy%20capacity%20across%20Canada.
+*               - Year : 2022
+
+* USA       - Link : https://www.eia.gov/electricity/data/eia860/
+*               - Year 2022
+*               - Use : 3_1_Generator and 3_4_Energy_Storage
+ 
+* Transmissions lines
+*           - QC from/to ON/AT/NY/NE
+*               - Link : http://www.oasis.oati.com/hqt/index.html
+*               - Year : 2021
+*               - Not considering 5150 MW from AT to QC as it corresponds to Churchill falls which is include in QC
+*           - NY from/to ON/NE
+*               - Search for "ISO New York Available Transfer Capability"
+*               - Year : 2023
+*           - NE from/to AT
+*               - Search for "ISO New England Available Transfer Capability"
+*               - Year : 2021
+
+
+******* COSTS:
+* All techno without TL - https://atb.nrel.gov/electricity/2023/data
+*                       - Year : 2023
+* TL                    - https://www.nature.com/articles/nclimate2921
+
+
+******* LOAD:
+* QUEBEC
+*       Link : https://www.regie-energie.qc.ca/fr/participants/suivis-administratifs/electricite-distribution
+*       Search : Entente globale cadre 2021 - D-2019-169
+*       Year : 2022
+*       Load = Volume d'électricité fournie par le Producteur au Distributeur (MWh)
+
+* ONTARIO
+*       Link : http://reports.ieso.ca/public/Demand/
+*       Search : PUB_Demand_2022.csv
+*       Year : 2022
+*       Load = Ontario Demand
+
+* ATLANTIC PROVINCES
+* NB profile :
+*       - Link : https://tso.nbpower.com/Public/en/system_information_archive.aspx
+*       - Year : 2022
+* Total elec used in AT (sum of NS/NB/NL/PE):
+*       - Link : https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=2510002101
+*       - Year : 2021
+* Load : NB Profile scaled with total electricity used in AT
+
+* NEW ENGLAND
+*       - Link : https://www.iso-ne.com/isoexpress/web/reports/load-and-demand/-/tree/whlsecost-hourly-system
+*       - Year : 2022
+*       - Load = RTLO
+
+* NEW YORK
+*       - Link : https://www.nyiso.com/custom-reports?report=int_rt_actual_load
+*       - Year : 2022
+*       - With zones : CAPITL, CENTRL, DUNWOD, GENESE, HUD VL, LONGIL ,MHK VL, MILLWD ,N.Y.C. ,NORTH, WEST
+
+
+******* WIND and SOLAR PROFILES:
+*       Year : 2022
+*       Links :
+*           - Location : https://globalwindatlas.info/ and https://globalsolaratlas.info/map
+*           - Profiles : https://www.renewables.ninja/
+
+* WIND ONSHORE
+* QC : 46.012224    -73.394165
+* ON : 45.050240    -76.036377
+* AT : 44.566991    -65.22583
+* NY : 42.503997    -76.38999
+* NE : 44.598290    -69.216614
+
+* WIND OFFSHORE
+* QC : 49.190679    -66.914978
+* ON : 44.680372    -80.26062
+* AT : 45.402307    -65.083008
+* NY : 40.535199    -73.802719
+* NE : 43.324179    -70.30426
+
+* SOLAR
+* QC : 46.890232    -73.355713
+* ON : 44.731126    -77.541504
+* AT : 45.912944    -66.016846
+* NY : 43.028745    -75.388184
+* NE : 43.012681    -71.586914
+
+
+******* HYDRO PROFILES:
+We use historical data inflows from Ministere de l’Environnement et de la Lutte contre les changements climatiques (2017); Environment and Natural Resources Canada (2017) for modelling 71% of Quebec’s hydro system (consisting of 5 large reservoirs, 4 intra-day reservoirs and 8 run-of-the-river hydropower plants). For the remaining hydroelectric capacity of Quebec, as well as for every other jurisdiction, hydro systems were modelled as run-of-the-river power plants, with inflows estimated from historic hydropower production (U.S. EIA, 2017; Statistics Canada, 2017; Ontario IESO, 2017b).
+
+ - Ministere de l’Environnement et de la Lutte contre les changements climatiques, 2017. Dams and hydrology. URL: http://www.cehq.gouv.qc.ca/index_en.asp.
+ - Environment and Natural Resources Canada, 2017. Historical hydrometric data. URL: https://wateroffice.ec.gc.ca/.
+ - U.S. EIA, 2017. Electricity data browser. URL: https://www.eia.gov/electricity/data/browser/.
+ - Statistics Canada, 2017. Table 25-10-0015-01. Electric power generation, monthly generation by type of electricity. URL: https://doi.org/10.25318/2510001501-eng.
+ - Ontario IESO, 2017b. Hourly generator energy output and capability report. URL: http://www.ieso.ca/en/power-data/data-directory.
